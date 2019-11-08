@@ -1,0 +1,15 @@
+1. It helps to remove prop drilling. Instead of passing props down from parent to child. You store in a context object and pass that around your app.
+
+2. Actions are functions that modify state.
+
+Reducers pretty much tell the store how the state is going to be modified, it takes in a state and an action.
+
+Store is this object that holds all state and you pass it to your app through a Provider.
+
+Store is the single source of truth because it is immutable or cannot be changed without going through an action that comes from the reducer
+
+3. In react most state is held in components and if another component needs it you pass as props. Redux store would be Application state that the whole app is passed. You would want Redux on a large scale application.
+
+4. Redux thunk is a middleware that lets you call action creators that return a function instead of action object.
+
+5. I think Context API would be the easiest to use and maybe quickest. But I really like Redux and have a pretty good understanding of why its used. Very useful.
