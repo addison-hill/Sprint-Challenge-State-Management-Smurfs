@@ -1,7 +1,10 @@
 import {
     FETCH_SMURFS_LOADING,
     FETCH_SMURFS_SUCCESS,
-    FETCH_SMURFS_FAILED
+    FETCH_SMURFS_FAILED,
+    ADD_SMURF_LOADING,
+    ADD_SMURF_SUCCESS,
+    ADD_SMURF_FAILED
 } from '../actions';
 
 const initialState = {
@@ -32,6 +35,28 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 list: [],
+                isFetching: false,
+                error: action.payload
+            };
+
+        case ADD_SMURF_LOADING:
+            return {
+                ...state,
+                isFetching: true,
+                error: null
+            };
+
+        case ADD_SMURF_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                list: [...state.list, action.payload],
+                error: null
+            };
+
+        case ADD_SMURF_FAILED:
+            return {
+                ...state,
                 isFetching: false,
                 error: action.payload
             };
