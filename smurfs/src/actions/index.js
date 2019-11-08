@@ -40,7 +40,7 @@ export const fetchSmurfs = () => dispatch => {
         .catch(err => dispatch({ type: FETCH_SMURFS_FAILED, payload: err}));
 };
 
-export const addSmurf = (newSmurf) => dispatch => {
+export const addSmurf = (newSmurf) => (dispatch) => {
     dispatch({ type: ADD_SMURF_LOADING });
     axios
         .post('http://localhost:3333/smurfs', newSmurf)

@@ -14,8 +14,10 @@ function Smurfs (props) {
     return (
         <div>
             <h1>Smurf Gang</h1>
-            <div className="list">
-                {props.list.map(smurf => (
+            <div className="container">
+                {props.list.length > 1 ? (
+                    <div className="list">
+                    {props.list.map(smurf => (
                     <Card key={smurf.id} className='card' >
                         <CardBody>
                             <CardTitle className="title">Name: {smurf.name}</CardTitle>
@@ -24,8 +26,13 @@ function Smurfs (props) {
                         </CardBody>
                     </Card>
                 ))}
+                </div>
+                ) : (
+                    <p>Press button to see Village of Smurfs</p>
+                )}
+                
             </div>
-            <button onClick={fetchCharacters}>Get Smurfs</button>
+            <button className="button" onClick={fetchCharacters}>Get Smurfs</button>
         </div>
     )
 }

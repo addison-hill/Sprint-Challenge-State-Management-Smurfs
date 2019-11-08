@@ -58,7 +58,7 @@ const AddSmurfForm = props => {
                     onChange={handleChange}
                     />
                 </label>
-                <button type="submit" className="button">Add</button>
+                <button type="submit" className="button">Add Smurf</button>
             </form>
         </div>
     );
