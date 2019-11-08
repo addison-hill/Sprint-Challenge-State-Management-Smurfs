@@ -5,7 +5,7 @@ import {
 } from '../actions';
 
 const initialState = {
-    smurfs: [],
+    list: [],
     error: null,
     isFetching: false
 };
